@@ -154,7 +154,26 @@ int main() {
 	if (list_get_index_of(mylist, 39) != -1) {
 		printf("list_get_index_of FAILED, 39 is not in list");
 	}
-  // list_free(mylist);
+  list_free(mylist);
+	int i;
+	for (i=0; i < 100; i++) {
+		list_add_to_front(mylist, i);
+	}
+	for (i=100; i<200; i++) {
+		list_add_to_back(mylist, i);
+	}
+	int j;
+	for (j=0; j<50; j++) {
+		list_add_at_index(mylist, j, j);
+	}
+	list_print(mylist);
+	for (j=0; j<100; j++) {
+		list_remove_at_index(mylist, list_get_index_of(mylist,j));
+	}
+	int c;
+	for (c=0; c<100; c++) {
+		list_get_elem_at(mylist, c);
+	}
   // list_add_at_index(mylist, -1, -1);
   // list_print(mylist);
   // list_add_at_index(mylist, -1, -1);
